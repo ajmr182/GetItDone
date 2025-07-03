@@ -8,6 +8,13 @@ fun List<TaskEntity>.toDomain(): List<TaskModel> = map {
         id = it.id,
         title = it.title,
         isDone = it.isDone,
-        date = it.date
+        date = it.date,
     )
 }
+
+fun TaskModel.toEntity(): TaskEntity = TaskEntity(
+        id = id,
+        title = title,
+        isDone = isDone,
+        date = date,
+)

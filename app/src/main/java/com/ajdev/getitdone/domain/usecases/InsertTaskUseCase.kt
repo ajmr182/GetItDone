@@ -3,10 +3,10 @@ package com.ajdev.getitdone.domain.usecases
 import com.ajdev.getitdone.domain.model.TaskModel
 import com.ajdev.getitdone.domain.repository.TaskRepository
 
-class GetAllTaskUseCase(
+class InsertTaskUseCase(
     private val repository: TaskRepository
 ) {
-    operator fun invoke(): List<TaskModel> {
-        return repository.getAllTasks()
+    operator fun invoke(taskModel: TaskModel) {
+        return repository.insertTask(taskModel)
     }
 }
